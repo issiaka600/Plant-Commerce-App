@@ -1,0 +1,34 @@
+.plantItem2-container{
+    /* border: 2px solid green; */
+    border-radius: 31px 0px 0px 0px;
+    margin: 10px;
+    width: 250px;
+}
+.plantItem2-container:hover{
+    border: 2px solid green;
+}
+/* .plantItem2-element > img {
+    width: 250px;
+    height: 250px;
+    border-radius:30px 0px 30px 0px;
+}
+.plantItem2-container:hover{
+    border: 2px solid green;
+} */
+.plantItem2-element > img {
+    width: 250px;
+    height: 250px;
+    border-radius:30px 0px 30px 0px;
+    position: relative;
+}
+.plantItem2-element >span {
+    position: absolute;
+    margin-left: -50px;
+    background: green;
+    color: white;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align:center;
+    border-radius:30px 0px 30px 0px;
+}

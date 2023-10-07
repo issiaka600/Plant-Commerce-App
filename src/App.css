@@ -1,6 +1,6 @@
-.App {
+/* .App {
   text-align: center;
-}
+} */
 .App-link {
   color: #61dafb;
 }
@@ -8,8 +8,8 @@
 .main{
   display: flex;
   flex-direction: row;
+  margin-left: 10px;
 }
-
 /* .App-logo {
   height: 40vmin;
   pointer-events: none;

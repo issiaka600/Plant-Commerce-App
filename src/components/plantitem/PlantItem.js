@@ -22,7 +22,7 @@ function PlantItem({plant}) {
   return (
     <div className='plantItem-container'>
         <div className='plantItem-element'>
-            <img src={plant.cover} alt={plant.name} />
+          <img src={plant.cover} alt={plant.name} />
         </div>
         <div className='plantItem-element'>
           <div className='plantItem-details'>

@@ -1,0 +1,18 @@
+.category-container{
+    text-align: center;
+}
+.category-container select{
+    width: 200px;
+    height: 30px;
+    line-height: 30px;
+    margin-right: 10px;
+    text-align: center;
+}
+.category-container button{
+    height: 30px;
+}
+.category-container button:hover{
+    /* border: 2px solid green; */
+    background-color: green;
+    color: white;
+}

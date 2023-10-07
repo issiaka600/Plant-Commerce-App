@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-regular-svg-icons'
 import { faDroplet } from '@fortawesome/free-solid-svg-icons'
@@ -17,14 +17,14 @@ function CareScale({ water, light }) {
 
     return (
         <>
-            <div className='plantItem-sub-element'>
+            <div className='plantItem2-sub-element'>
                 {
-                    waters.map(water => (water))
+                    waters.map((water,index) => (<Fragment key={index}>{water}</Fragment>))
                 }
             </div>
-            <div className='plantItem-sub-element'>
+            <div className='plantItem2-sub-element'>
                 {
-                    stars.map(start => (start))
+                    stars.map((star,index) => (<Fragment key={index}>{star}</Fragment>))
                 }
             </div>
         </>
