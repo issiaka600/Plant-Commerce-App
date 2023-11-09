@@ -4,9 +4,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faDroplet, faStar } from '@fortawesome/free-solid-svg-icons'
 import CareScale from './CareScale'
 import { MONEY_SYMBOL } from '../../constants/MoneySymbol'
+import { useBasketContext } from '../../contexts/BasketContext'
 
 
 function PlantItem2({ plant, changeBasket}) {
+    const {basket,setBasket} =useBasketContext()
     let waters = []
     for (let index = 0; index < plant.water; index++) {
         waters.push(<FontAwesomeIcon icon={faDroplet} style={{ color: "#0000ff", }} />)
@@ -19,7 +21,8 @@ function PlantItem2({ plant, changeBasket}) {
         const data =JSON.parse(localStorage.getItem('basket'))
         if(Array.isArray(data)){
             const updatedBasket = [...data,{'id':id, 'name':name,'price':price}]
-            changeBasket(updatedBasket)
+            localStorage.setItem('basket', JSON.stringify(data));
+            setBasket(updatedBasket)
         }
         else{
             console.log('data', data)

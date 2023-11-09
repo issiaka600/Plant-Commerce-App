@@ -11,3 +11,13 @@
 .cart-element{
     margin: auto;
 }
+/* Ajoutez ces styles à votre fichier CSS */
+.modal {
+    display: none;
+    /* Ajoutez d'autres styles nécessaires pour le positionnement */
+  }
+  
+  .show {
+    display: block;
+  }
+  
