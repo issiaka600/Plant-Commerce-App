@@ -21,7 +21,7 @@ function ShoppingList({updateBasket}) {
 
   const getPlantsByCategory = (plantList,category)=>{
     if(category!==''){
-      return plantList.filter(plant=>plant.category===category)
+      return plantList.filter(plant=>(plant.category && plant.category.name && plant.category.name===category))
     }
       return plantList
   }
@@ -40,7 +40,7 @@ function ShoppingList({updateBasket}) {
             plantList.map(item=>(<PlantItem2 plant={item}  key={item.id}/>))
           } */}
           {
-            getPlantsByCategory(plantList,selectedCategory).map(item=>(<PlantItem2  plant={item}  key={item.id} changeBasket={handleUpdateBasket} />))
+            getPlantsByCategory(plantList,selectedCategory).map(item=>(<PlantItem2  plant={item}  key={item?._id} changeBasket={handleUpdateBasket} />))
             // plantList?.map(item=>(<PlantItem2  plant={item}  key={item.id} changeBasket={handleUpdateBasket} />))
           }
       </div>
