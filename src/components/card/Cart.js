@@ -7,7 +7,7 @@ import { COMMAND_API_URL } from '../../constants/constants'
 import axios from 'axios'
 
 function Cart({toggleBasket,changeToggleBasket}) {
-  const {basket,setBasket}= useBasketContext
+  const {basket,setBasket}= useBasketContext()
   const navigate = useNavigate()
 
   const handleToggleBasket = ()=>{
@@ -27,19 +27,20 @@ function Cart({toggleBasket,changeToggleBasket}) {
     if(storedSession){
       if(JSON.parse(storedSession).token){
         if(Array.isArray(basket) && basket.length>0){
-          axios.post(`${COMMAND_API_URL}/create`,basket)
+          const userId = JSON.parse(storedSession).userId
+          axios.post(`${COMMAND_API_URL}/create`,{userId:userId, plants: basket})
           .then(response=>{
-            console.log('commande added')
-            localStorage.removeItem('basket')
-            setBasket([])
+    //         console.log('commande added')
+    //         localStorage.removeItem('basket')
+    //         setBasket([])
           })
-          .catch(error => console.error(error))
+    //       .catch(error => console.error(error))
         }
       }
     }
-    else{
-      navigate('/signin')
-    }
+    // else{
+    //   navigate('/signin')
+    // }
   }
   // const displayList = basket.map(plant=>(<li key={plant.}>{getPlantCount(plant.id)} olivier 25 {MONEY_SYMBOL}</li>))
 

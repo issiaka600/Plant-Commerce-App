@@ -20,7 +20,7 @@ function PlantItem2({ plant, changeBasket}) {
     const handleAddToBasket = (id,name,price)=>{
         const data =JSON.parse(localStorage.getItem('basket'))
         if(Array.isArray(data)){
-            const updatedBasket = [...data,{'id':id, 'name':name,'price':price}]
+            const updatedBasket = [...data,{id:id, name:name,price:price}]
             localStorage.setItem('basket', JSON.stringify(data));
             setBasket(updatedBasket)
         }
@@ -40,7 +40,10 @@ function PlantItem2({ plant, changeBasket}) {
                 </div>
                 <CareScale water={plant.water} light={plant.light} />
                 <div className='plantItem2-sub-element'>
-                    <button onClick={event=>handleAddToBasket(plant.id,plant.name,plant.price)}>
+                    <button onClick={event=>{
+                        event.preventDefault()
+                        handleAddToBasket(plant._id,plant.name,plant.price)
+                    }}>
                         Ajouter
                     </button>
                     

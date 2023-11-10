@@ -24,6 +24,7 @@ const LoginForm = () => {
           const userInfo= {
             token :response.data.token,
             name : response.data.user.name,
+            userId : response.data.user.id,
             email : response.data.user.email,
             password : response.data.user.password
           }
